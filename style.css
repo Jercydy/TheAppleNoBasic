@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     /* background-color: #E9EED9; */
@@ -13,7 +14,7 @@
     display: f;
 } */
 .page-wrapper {
-    padding-top: 90px;
+    /* padding-top: 90px; */
     /* Fixed value that matches nav height + desired spacing */
     width: 100%;
     box-sizing: border-box;
@@ -90,7 +91,7 @@ body {
     padding: 5%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: auto;
     gap: 30px;
     color: grey;
 }
@@ -135,7 +136,8 @@ body {
 
 .blog-small-info {
     margin-bottom: 1vw;
-    font-family: "Maven Pro", sans-serif;
+    font-family: "Noto Sans", serif;
+    font-weight: 300;
 }
 
 .blog-small-info p {
@@ -155,24 +157,41 @@ body {
     grid-column: span 2;
     /* background-color: rebeccapurple; */
     justify-content: space-between;
-    font-size: 1em;
-    font-family: "Maven Pro", sans-serif;
+}
+
+.paging a {
+    font-family: "Roboto Condensed", serif;
+    font-weight: 300;
+    color: black;
+    font-size: 1.2em;
 }
 
 .paging .newer {
     visibility: hidden;
 }
 
-@media (max-width: 768px) {
-    .main-content {
+@media screen and (max-width: 768px) {
+    /* .main-content {
         grid-template-columns: 1fr;
-        /* Switch to single column on mobile */
-        grid-template-rows: repeat(10, 1fr);
+        grid-template-rows: auto;
+    } */
+
+    .main-item {
+        grid-column: span 2;
+        /* max-width: 80%; */
+    }
+
+    .main-item-thumbnail img {
+        border-radius: 2%;
     }
 }
 
 
 /* ===================== testing css article ===================== */
+.main-content-article {
+    padding: 5%;
+}
+
 .article-content a {
     text-decoration: none;
 }
@@ -182,7 +201,7 @@ body {
     justify-content: center;
     gap: 6px;
     margin-bottom: 40px;
-
+    font-family: "Inconsolata", monospace;
 }
 
 .article-meta p {
@@ -199,10 +218,11 @@ body {
 
 
 .article-content {
-    padding: 90px 30% 5% 30%;
+    padding: 0 25%;
     max-width: 1200px;
     margin: 0 auto;
-    font-family: "Maven Pro", sans-serif;
+    font-family: "Noto Sans", serif;
+    font-weight: 300;
     text-align: center;
 }
 
@@ -226,16 +246,19 @@ body {
 }
 
 .featured-image {
-    width: 100%;
+    /* width: 100%;
     border-radius: 12px;
     overflow: hidden;
-    margin: 0 auto 40px;
+    margin: 0 auto 40px; */
+    height: auto;
+    width: auto;
+    margin-bottom: 40px;
 }
 
 .featured-image img {
-    width: 100%;
-    height: auto;
-    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 12px;
 }
 
 .article-content-info {
@@ -245,4 +268,20 @@ body {
 
 .horizentle-line {
     margin-bottom: 40px;
+}
+
+
+
+/* ===================== page navigation section ===================== */
+.article-navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.article-navigation a {
+    text-decoration: none;
+    font-family: "Roboto Condensed", serif;
+    font-weight: 300;
+    color: black;
+    font-size: 1.2em;
 }
